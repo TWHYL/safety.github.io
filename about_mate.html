@@ -9,6 +9,8 @@
     <title>安全荣耀-走进安全荣耀-匹配赛-排位赛-飞行赛</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunbo.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
@@ -25,8 +27,9 @@
                             <div class="dd">
                                 <ul>
                                     <li><a href="about_qualifying.html">排位赛</a></li>
-                                    <li><a href="about_flying.html">飞行赛</a></li>
                                     <li><a href="about_mate.html">匹配赛</a></li>
+                                    <li><a href="about_flying.html">飞行赛</a></li>
+
                                     <li><a href="#">联系我们</a></li>
                                 </ul>
                             </div>
@@ -34,15 +37,29 @@
                     </div>
                 </li>
                 <li><a href="about_qualifying.html">排位赛</a></li>
-                <li><a href="about_flying.html">飞行赛</a></li>
                 <li><a href="about_mate.html">匹配赛</a></li>
+                <li><a href="about_flying.html">飞行赛</a></li>
+
                 <li><a href="#">联系我们</a></li>
             </ul>
         </div>
     </div>
     <!--轮播部分-->
     <div class="banner w">
-        <a href="about_mate.html"><img src="images/matebk.png" title="匹配赛" height="650px"></a>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><a href="about_mate.html"><img src="images/matebk.png" title="匹配赛"></div></a>
+                <div class="slide"><a href="about_flying.html"><img src="images/flyingbk.png" title="飞行赛"></div></a>
+                <div class="slide"><a href="index.html"><img src="images/bk1.jpg" title="安全荣耀"></div></a>
+                <div class="slide"><a href="about_qualifying.html"><img src="images/qualifyingbk1.png" title="排位赛">
+                </div></a>
+
+
+            </div>
+            <button class="prev-button">&#9664;</button>
+            <button class="next-button">&#9654;</button>
+        </div>
+        <script src="lunbo.js"></script>
     </div>
     <div class="nlav w">
         文字
@@ -58,8 +75,9 @@
                 <ul>
                     <li><a href="#">联系我们</a></li>
                     <li><a href="#">排位赛</a></li>
-                    <li><a href="#">飞行赛</a></li>
                     <li><a href="#">匹配赛</a></li>
+                    <li><a href="#">飞行赛</a></li>
+
                 </ul>
             </div>
             <div class="footer-contact">
@@ -74,14 +92,14 @@
         </div>
     </footer>
     <!--侧边栏区域-->
-    <section>
+    <!--<section>
         <ul>
             <li><a href="#">关于我们</a></li>
             <li><a href="#">联系我们</a></li>
             <li><a href="#">隐私政策</a></li>
             <li><a href="#">服务条款</a></li>
         </ul>
-    </section>
+    </section>-->
 </body>
 
 </html>
