@@ -9,13 +9,16 @@
     <title>安全荣耀-走进安全荣耀-匹配赛-排位赛-飞行赛</title>
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lunbo.css">
+    <link rel="stylesheet" href="common.css">
 </head>
 
 <body>
     <!--头部区域-->
     <div class="header ">
         <!--logo部分-->
-        <div class="logo"><a href="index.html"><img src="images/logo.png" title="安全荣耀" height="84px"> </a></div>
+        <div class="logo"><a href="index.html"><img src="images/logo.png" alt="安全荣耀logo" title="安全荣耀" height="84px">
+            </a></div>
         <!--导航栏部分-->
         <div class="nav">
             <ul>
@@ -25,8 +28,9 @@
                             <div class="dd">
                                 <ul>
                                     <li><a href="about_qualifying.html">排位赛</a></li>
-                                    <li><a href="about_flying.html">飞行赛</a></li>
                                     <li><a href="about_mate.html">匹配赛</a></li>
+                                    <li><a href="about_flying.html">飞行赛</a></li>
+
                                     <li><a href="#">联系我们</a></li>
                                 </ul>
                             </div>
@@ -34,23 +38,38 @@
                     </div>
                 </li>
                 <li><a href="about_qualifying.html">排位赛</a></li>
-                <li><a href="about_flying.html">飞行赛</a></li>
                 <li><a href="about_mate.html">匹配赛</a></li>
+                <li><a href="about_flying.html">飞行赛</a></li>
+
                 <li><a href="#">联系我们</a></li>
             </ul>
         </div>
     </div>
     <!--轮播部分-->
     <div class="banner w">
-        <a href="about_flying.html"><img src="images/flyingbk.jpg" title="飞行赛" height="650px"></a>
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><a href="about_flying.html"><img src="images/flyingbk.png" title="飞行赛"></div></a>
+                <div class="slide"><a href="index.html"><img src="images/bk1.jpg" title="安全荣耀"></div></a>
+                <div class="slide"><a href="about_qualifying.html"><img src="images/qualifyingbk1.png" title="排位赛">
+                </div></a>
+                <div class="slide"><a href="about_mate.html"><img src="images/matebk.png" title="匹配赛"></div></a>
+
+            </div>
+            <button class="prev-button">&#9664;</button>
+            <button class="next-button">&#9654;</button>
+        </div>
+        <script src="lunbo.js"></script>
     </div>
     <div class="nlav w">
-        文字
+        <h2>飞行赛介绍</h2>
+        <p>飞行赛是通过转转盘获得步数然后飞到不同省份里，获得具有当前省会城市特殊元素的答题权，每道题中都会针对当地频繁发生的安全事故进行举例让公众更有印象，在生活中更能具体的应对一些公共安全的事情，例如四川省成都市经常发生地震，我们可以借成都当地特色去科普关于地震的知识，让公众不觉得枯燥，想要继续学下去，从而到达增强公民的安全意识。
+        </p>
     </div>
     <!--底部区域-->
     <footer class="w">
         <div class="left">
-            <a href="index.html"><img src="images/logo.png" title="安全荣耀" height="100px"></a>
+            <a href="index.html"><img src="images/logo.png" alt="安全荣耀logo" title="安全荣耀" height="100px"></a>
             <p>&copy; 2023 安全荣耀</p>
         </div>
         <div class="footer-lc">
@@ -58,8 +77,9 @@
                 <ul>
                     <li><a href="#">联系我们</a></li>
                     <li><a href="about_qualifying.html">排位赛</a></li>
-                    <li><a href="about_flying.html">飞行赛</a></li>
                     <li><a href="about_mate.html">匹配赛</a></li>
+                    <li><a href="about_flying.html">飞行赛</a></li>
+
                 </ul>
             </div>
             <div class="footer-contact">
@@ -69,19 +89,19 @@
         </div>
 
         <div class="right">
-            <a href="index.html"><img src="images/logo.png" title="安全荣耀" height="100px"></a>
+            <a href="index.html"><img src="images/logo.png" alt="安全荣耀logo" title="安全荣耀" height="100px"></a>
             <p>&copy; 2023 安全荣耀</p>
         </div>
     </footer>
     <!--侧边栏区域-->
-    <section>
+    <!--<section>
         <ul>
             <li><a href="#">关于我们</a></li>
             <li><a href="#">联系我们</a></li>
             <li><a href="#">隐私政策</a></li>
             <li><a href="#">服务条款</a></li>
         </ul>
-    </section>
+    </section>-->
 </body>
 
 </html>
