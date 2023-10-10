@@ -13,7 +13,7 @@ a {
 
 .w {
     width: 1300px;
-    margin: 15px auto;
+    margin: 30px auto;
 }
 
 .header {
@@ -26,7 +26,7 @@ a {
     left: 50%;
     margin-left: -650px;
     box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.05);
-
+    z-index: 1;
 }
 
 .logo {
@@ -44,8 +44,8 @@ a {
 }
 
 .nav {
-    float: left;
-    margin-left: 270px;
+
+    margin-left: 379px;
 }
 
 .dropdown {
@@ -56,19 +56,20 @@ a {
 }
 
 .dropdown .dd li {
-
+    margin-top: 8px;
     height: 0px;
     transition: all .2s;
-
-    opacity: 0;
+    background-image: url(images/drop.png);
+    opacity: 0
 }
 
 .dropdown:hover li {
     width: 230px;
-    height: 70px;
+    height: 77px;
     opacity: 1;
     box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0);
+    background: url(images/drop.png) no-repeat;
+    /* background-color: rgba(0, 0, 0, 0);*/
     transform: translateY(-65px);
     transform: translateX(0);
 }
@@ -87,7 +88,7 @@ a {
 }
 
 .nav ul li a:hover {
-    border-bottom: 2px solid #000;
+    /* border-bottom: 2px solid #000;*/
     color: #000;
 
 }
@@ -105,114 +106,126 @@ a {
 }
 
 .banner img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .nlav {
     overflow: hidden;
-    margin-top: 1000px;
-    background-color: pink;
+    /* 溢出隐藏 */
+    /* margin-top: 1000px;*/
+    position: relative;
+    width: 1180px;
+    margin: 15px auto;
+    padding: 0 60px 60px 60px;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff
+}
+
+.new_title {
+    position: relative;
+    height: 84px;
+    padding: 75px 0 30px;
+}
+
+.nheader {
+    float: left;
+    padding-left: 30px;
+}
+
+/* .nheader img {
+    height: 84px;
+    width: 84px;
+} */
+
+.nheader.n-h-txt {
+    height: 84px;
+    padding-top: 6px;
+    padding-left: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.aq_desc {
+    position: relative;
+    width: 1075px;
+    height: 360px;
+    overflow: hidden;
+}
+
+.aq_desc .aq_desc {
+    display: block;
+    position: relative;
+    width: 512px;
+    height: 336px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+}
+
+.aq_img {
+    float: left;
+    width: 522px;
+    height: 330px;
+    border-radius: 5px;
+    border: 3px solid #dcdcdc;
+}
+
+.fr {
+    float: right;
+}
+
+.aq_desctxt_til {
+    font-size: 30px;
+    color: #333333;
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+    width: 512px;
+    height: 40px;
 
 }
 
-.nlav img {
+.aq_desctxt_wrod {
+    display: block;
+    font-size: 23px;
+    color: gray;
+    line-height: 30px;
+}
+
+.aq_box ul li {
+    float: left;
+    width: 370px;
+    height: 450px;
+
+}
+
+.aq_box ul li p {
+    margin: 20px 10px 10px 10px;
+
+    font-size: 25px;
+    color: #909090;
+    line-height: 30px;
+}
+
+.aq_box_img {
+    margin-right: 35px;
+}
+
+/* .nlav img {
 
     height: 650px;
     width: 1300px;
+    margin-top: 30px;
     box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.3);
     transition: all .4s;
 
-}
+} */
 
 .nlav img:hover {
     transform: scale(1.05);
 }
 
-footer {
-    margin-top: 10px;
-    height: 350px;
-
-    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-}
-
-.left {
-    float: left;
-    margin: 103px 0px 0px 0px;
-}
-
-.left img {
-    height: 100px;
-    transition: all .4s;
-}
-
-.left img:hover {
-    transform: scale(1.3);
-}
-
-.left p {
-    font-size: 20px;
-    margin: 20px 0px 15px 30px;
-    color: #666;
-
-}
-
-.footer-lc {
-    float: left;
-    text-align: center;
-    padding-top: 140px;
-    padding-left: 200px;
-}
-
-.footer-links {
-    padding-bottom: 60px;
-}
-
-.footer-links ul {
-    list-style-type: none;
-    padding: 10px;
-}
-
-.footer-links li {
-    display: inline;
-    margin-right: 30px;
-}
-
-.footer-links a {
-    font-size: 30px;
-    text-decoration: none;
-    color: gray;
-}
-
-.footer-links ul li a:hover {
-    border-bottom: 2px solid #000;
-    color: #000;
-
-}
 
 
-.right {
-    float: right;
-    margin: 103px 0px 0px 0px;
-
-}
-
-.right img {
-    height: 100px;
-    transition: all .4s;
-}
-
-.right img:hover {
-    transform: scale(1.3);
-}
-
-.right p {
-    font-size: 20px;
-    margin: 20px 0px 15px 30px;
-    color: #666;
-}
-
-section {
+/* section {
     position: fixed;
     background-color: transparent;
     right: 20px;
@@ -233,4 +246,4 @@ section ul li a:hover {
     border-bottom: 2px solid #000;
     color: gray;
 
-}
+} */
