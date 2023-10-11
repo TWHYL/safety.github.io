@@ -69,7 +69,7 @@ a {
     opacity: 1;
     box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.3);
     background: url(images/drop.png) no-repeat;
-    /* background-color: rgba(0, 0, 0, 0);*/
+
     transform: translateY(-65px);
     transform: translateX(0);
 }
@@ -88,7 +88,7 @@ a {
 }
 
 .nav ul li a:hover {
-    /* border-bottom: 2px solid #000;*/
+
     color: #000;
 
 }
@@ -112,7 +112,7 @@ a {
 .nlav {
     overflow: hidden;
     /* 溢出隐藏 */
-    /* margin-top: 1000px;*/
+
     position: relative;
     width: 1180px;
     margin: 15px auto;
@@ -132,10 +132,6 @@ a {
     padding-left: 30px;
 }
 
-/* .nheader img {
-    height: 84px;
-    width: 84px;
-} */
 
 .nheader.n-h-txt {
     height: 84px;
@@ -150,6 +146,13 @@ a {
     width: 1075px;
     height: 360px;
     overflow: hidden;
+
+}
+
+.aq_desc:hover {
+    /* 启用垂直滚动条 */
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .aq_desc .aq_desc {
@@ -187,6 +190,7 @@ a {
     display: block;
     font-size: 23px;
     color: gray;
+    text-indent: 2em;
     line-height: 30px;
 }
 
@@ -197,53 +201,19 @@ a {
 
 }
 
-.aq_box ul li p {
+.aq_box ul li h4 {
     margin: 20px 10px 10px 10px;
 
     font-size: 25px;
     color: #909090;
-    line-height: 30px;
+    line-height: 40px;
 }
 
 .aq_box_img {
     margin-right: 35px;
 }
 
-/* .nlav img {
-
-    height: 650px;
-    width: 1300px;
-    margin-top: 30px;
-    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.3);
-    transition: all .4s;
-
-} */
 
 .nlav img:hover {
     transform: scale(1.05);
 }
-
-
-
-/* section {
-    position: fixed;
-    background-color: transparent;
-    right: 20px;
-    bottom: 20px;
-    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.2);
-}
-
-section ul li a {
-    display: block;
-    height: 70px;
-    padding: 2px 5px;
-    line-height: 72px;
-    font-size: 25px;
-    color: #000;
-}
-
-section ul li a:hover {
-    border-bottom: 2px solid #000;
-    color: gray;
-
-} */
