@@ -5,14 +5,18 @@
         }
 
         #test-title {
+            position: relative;
             background-image: url('images/bk1.jpg');
-            /* 将 'your-image-url.jpg' 替换为你的背景图片文件路径 */
             background-size: cover;
-            /* 调整背景图片大小以填充整个元素 */
             background-position: center;
-            /* 将背景图片居中 */
             color: transparent;
-            /* 使文本内容透明，以显示背景图片 */
+            width: 1300px;
+            height: 140px;
+            top: 5px;
+            left: 50%;
+            margin-left: -650px;
+            box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.05);
+            z-index: 1;
         }
 
         .container {
