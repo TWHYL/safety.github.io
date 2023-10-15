@@ -14,10 +14,9 @@ function time_fun() {
         sec++;
         var date = new Date(0, 0);
         date.setSeconds(sec);
-        var h = date.getHours(),
-            m = date.getMinutes(),
-            s = date.getSeconds();
-        document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        document.getElementById("mytime").innerText = two_char(m) + ":" + two_char(s);
     }
 
     timer = setInterval(updateTime, 1000);
@@ -47,24 +46,24 @@ function main() {
         if (aryAns[i] == resultArray[i]) {
             right_number++;
             rightArray[i] = 1;
-            score++; // 增加得分
         } else {
             rightArray[i] = 0;
         }
     }
+
+    // 计算积分
+    var score = right_number;
 
     var right_question = " ";
     var error_question = " ";
 
     for (var i = 0; i < rightArray.length; i++) {
         if (rightArray[i] == 1) {
-            right_question += (i + 1) + ",";
+            right_question += (i + 1) + " ";
         } else {
-            error_question += (i + 1) + ","; // 将 i 加 1
+            error_question += (i + 1) + " ";
         }
     }
-
-    stopTimer(); // 停止计时器
 
     document.getElementById("right_number").innerText = right_number;
     document.getElementById("score").innerText = score;
@@ -78,6 +77,31 @@ function main() {
     if (error_question != " ") {
         document.getElementById("error_question").innerText = error_question;
     }
+    if (score >= 5) {
+        // 如果积分大于等于10，显示内容A
+        document.getElementById("content").innerText = "您已经遨游了全中国";
+    } else if (score >= 4) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "您已经遨游了大半个中国";
+
+    }
+    else if (score >= 3) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "你已经遨游了中国西部";
+    }
+    else if (score >= 2) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "你已经遨游了一个省份";
+    }
+    else if (score >= 1) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "你已经遨游了一个城市";
+    }
+    else {
+        // 如果积分小于5，显示内容C
+        document.getElementById("content").innerText = "你已经在梦中遨游了一圈";
+    }
+    stopTimer(); // 停止计时器
 }
 
 function Name(name) {
@@ -124,7 +148,7 @@ function getRandomQuestions() {
                 "D、以上都可以"
 
             ],
-            answer: 4
+            answer: 4// 答案是D
         }, {
             question: "当你在甘肃旅游时，若遇到下雨天气经常会发生滑坡现象，特殊的黄土层、复杂的地形地貌和大规模的降雨都是引发滑坡的诱因。那么如何避免遭遇滑坡呢？(  )",
             options: [
@@ -133,7 +157,7 @@ function getRandomQuestions() {
                 "C、必须通过滑坡易发区时，选择干燥的季节与气象条件",
                 "D、以上都可以",
             ],
-            answer: 4
+            answer: 4// 答案是D
         }, {
             question: "云南有美丽的大理，丽江古城，玉龙雪山等等，但是独特的植被、山形地势、气候条件等因素让它也成为了发生火灾最多的地区，火灾中引起人员大量伤亡的主要原因是(  )",
             options: [
@@ -141,7 +165,7 @@ function getRandomQuestions() {
                 "B、吸入烟气窒息死亡",
                 "C、被火烧死"
             ],
-            answer: 2
+            answer: 2// 答案是B
         }, {
             question: "新疆是我国肉毒梭状芽孢杆菌食物中毒较多的地区,引起中毒的食品有30多种,常见的有臭豆腐、豆酱、豆豉和谷类食品。那么你知道肉毒梭状芽孢杆菌引起食物中毒是由什么因素引起的(  )",
             options: [
@@ -150,7 +174,7 @@ function getRandomQuestions() {
                 "C、肉毒梭状芽孢杆菌生长快",
                 "D、食品腐朽"
             ],
-            answer: 2 // 答案的索引，这里是A选项
+            answer: 2 // 答案是B
         }, {
             question: "作为我国的沿海省市,广东省的7,8月份时常会出现台风。下列有关台风的防御措施叙述不正确的是()",
             options: [
@@ -159,7 +183,7 @@ function getRandomQuestions() {
                 "C. 禁止室内外大型集会和高空等户外危险作业 ",
                 "D. 尽量留在家中最安全的地方，打开门窗通风"
             ],
-            answer: 4  // 答案的索引，这里是A选项
+            answer: 4 // 答案是D
         },
         {
             question: "湖南省经常性发生的主要气象气候灾害是(   )",
@@ -169,7 +193,7 @@ function getRandomQuestions() {
                 "C.台风、冰灾",
                 "D.水旱灾害、寒潮"
             ],
-            answer: 4 // 答案的索引，这里是A选项
+            answer: 4 // 答案是D
         },
         {
             question: "郑州是河南省省会城市，也是我国重要的交通枢纽。由于地理位置的原因，郑州市经常受到暴雨袭击。当发布时暴雨黄色预警，以下应对措施不当的是(   )。",
@@ -179,7 +203,7 @@ function getRandomQuestions() {
                 "C. 前往沿海观浪",
                 "D. 举行户外庆祝活动"
             ],
-            answer: 4 // 答案的索引，这里是A选项
+            answer: 4// 答案是D
         },
 
         {
@@ -190,7 +214,7 @@ function getRandomQuestions() {
                 "C.政府及相关部门按照职责做好防暴雨工作",
                 "D.学校停课，禁止集会，停业休息"
             ],
-            answer: 2// 答案的索引，这里是A选项
+            answer: 2// 答案是B
         },
         {
             question: "深圳是中国的特大城市，位于广东省，经常受到台风袭击。当台风预警发布时，以下应对措施不当的是(  )",
@@ -200,9 +224,10 @@ function getRandomQuestions() {
                 "C. 保持紧急联系方式，随时准备向救援部门求助",
                 "D. 躲避户外，不要到露天区域"
             ],
-            answer: 2// 答案的索引，这里是A选项
+            answer: 2// 答案是B
         },
     ];
+
 
     var shuffledQuestions = shuffleArray(questionSet);
     return shuffledQuestions.slice(0, 5);  // 随机选择五个题目
@@ -216,7 +241,7 @@ function populateQuestions() {
         var questionText = questionSet[i].question;
         var questionDiv = document.createElement("div");
         questionDiv.innerHTML = '<p class="question-text">' + questionText + '</p>';
-        questionDiv.classList.add('question-container');  // 添加问题容器的类
+        questionDiv.classList.add('question-container');  // 这是添加问题容器的类
 
         var options = questionSet[i].options;
 
@@ -238,5 +263,4 @@ function populateQuestions() {
 function getAnswers() {
     return questionSet.map(question => question.answer);
 }
-
 
