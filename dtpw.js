@@ -14,10 +14,9 @@ function time_fun() {
         sec++;
         var date = new Date(0, 0);
         date.setSeconds(sec);
-        var h = date.getHours(),
-            m = date.getMinutes(),
-            s = date.getSeconds();
-        document.getElementById("mytime").innerText = two_char(h) + ":" + two_char(m) + ":" + two_char(s);
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        document.getElementById("mytime").innerText = two_char(m) + ":" + two_char(s);
     }
 
     timer = setInterval(updateTime, 1000);
@@ -47,24 +46,24 @@ function main() {
         if (aryAns[i] == resultArray[i]) {
             right_number++;
             rightArray[i] = 1;
-            score++; // 增加得分
         } else {
             rightArray[i] = 0;
         }
     }
+
+    // 计算积分
+    var score = right_number;
 
     var right_question = " ";
     var error_question = " ";
 
     for (var i = 0; i < rightArray.length; i++) {
         if (rightArray[i] == 1) {
-            right_question += (i + 1) + ",";
+            right_question += (i + 1) + " ";
         } else {
-            error_question += (i + 1) + ","; // 将 i 加 1
+            error_question += (i + 1) + " ";
         }
     }
-
-    stopTimer(); // 停止计时器
 
     document.getElementById("right_number").innerText = right_number;
     document.getElementById("score").innerText = score;
@@ -78,6 +77,28 @@ function main() {
     if (error_question != " ") {
         document.getElementById("error_question").innerText = error_question;
     }
+    if (score >= 5) {
+        // 如果积分大于等于10，显示内容A
+        document.getElementById("content").innerText = "您目前的段位:安全大专家";
+    } else if (score >= 4) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "您目前的段位:安全领导者";
+
+    }
+    else if (score >= 3) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "您目前的段位:安全科代表";
+    }
+    else if (score >= 2) {
+        // 如果积分大于等于5但小于10，显示内容B
+        document.getElementById("content").innerText = "您目前的段位:安全初学者";
+    }
+
+    else {
+        // 如果积分小于5，显示内容C
+        document.getElementById("content").innerText = "您目前的段位:安全小趴菜";
+    }
+    stopTimer(); // 停止计时器
 }
 
 function Name(name) {
@@ -122,7 +143,7 @@ function getRandomQuestions() {
                 "B、跳入铁轨逃生",
                 "C、用车厢的消防器材控制小火"
             ],
-            answer: 2// 答案的索引，这里是B选项
+            answer: 2// 答案是B
         }, {
             question: "下列关于急救的优先次序中，说法错误的是(  )",
             options: [
@@ -131,14 +152,14 @@ function getRandomQuestions() {
                 "C.先重后轻",
                 "D.先运后救",
             ],
-            answer: 4
+            answer: 4// 答案是D
         }, {
             question: "根据《国家突发公共事件总体应急预案》，各类突发公共事件按照其性质、严重程度、可控性和影响范围等因素，一般分为三级。",
             options: [
                 "A. 正确",
                 "B. 错误"
             ],
-            answer: 2
+            answer: 2// 答案是B
         }, {
             question: "因紧急避险造成损害的，由（    ）承担民事责任。",
             options: [
@@ -146,14 +167,14 @@ function getRandomQuestions() {
                 "B.受害人",
                 "C.引起险情发生的人"
             ],
-            answer: 0  // 答案的索引，这里是A选项
+            answer: 3 // 答案是C
         }, {
             question: "可燃气体与空气混合后，一旦遇到明火，必然会发生爆炸。",
             options: [
                 "A. 正确",
                 "B. 错误"
             ],
-            answer: 0  // 答案的索引，这里是A选项
+            answer: 2 // 答案是B
         },
         {
             question: "安全生产事故发生后，必须遵循(   )的原则？",
@@ -164,7 +185,7 @@ function getRandomQuestions() {
                 "D.边报告",
                 "E.以上都对"
             ],
-            answer: 5 // 答案的索引，这里是A选项
+            answer: 5 // 答案是E
         },
         {
             question: "电器设备引起火灾的原因是(   )。",
@@ -174,7 +195,7 @@ function getRandomQuestions() {
                 "C.还未超负荷;",
                 "D.电线未老化"
             ],
-            answer: 1 // 答案的索引，这里是A选项
+            answer: 1 // 答案是A
         },
         {
             question: "使用灭火器时，应注意(   )",
@@ -184,7 +205,7 @@ function getRandomQuestions() {
                 "C.对准燃烧点下部喷射",
                 "D.对准燃烧点上部喷射"
             ],
-            answer: 1 // 答案的索引，这里是A选项
+            answer: 1 // 答案是A
         },
         {
             question: "现场心肺复苏时，按压与吹气之比是(   )",
@@ -193,7 +214,7 @@ function getRandomQuestions() {
                 "B.15:2",
                 "C.20:3"
             ],
-            answer: 1 // 答案的索引，这里是A选项
+            answer: 1 // 答案是A
         },
         {
             question: "燃气泄漏时，不要在室内停留，以防窒息、(   )",
@@ -203,7 +224,7 @@ function getRandomQuestions() {
                 "C.呕吐",
                 "D.晕倒"
             ],
-            answer: 1 // 答案的索引，这里是A选项
+            answer: 1 // 答案是A
         },
 
     ];
@@ -220,7 +241,7 @@ function populateQuestions() {
         var questionText = questionSet[i].question;
         var questionDiv = document.createElement("div");
         questionDiv.innerHTML = '<p class="question-text">' + questionText + '</p>';
-        questionDiv.classList.add('question-container');  // 添加问题容器的类
+        questionDiv.classList.add('question-container');  // 这是添加问题容器的类
 
         var options = questionSet[i].options;
 
