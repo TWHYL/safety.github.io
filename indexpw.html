@@ -14,12 +14,12 @@
 
 <body onload="time_fun(),populateQuestions()" style="padding:0px 80px 80px 80px;">
     <center id="test-title">
-        <font size="6" color="green"><b>排位赛</b></font>
-        <h1>开启您的上分之路 <span id="mytime">00:00:00</span></h1>
+        <font size="6" color="white"> <b>开启您的上分之路 </b></font>
+        <h1><span id="content">您目前的段位:</span>
+            <br><span id="mytime">00:00:00</span>
+        </h1>
     </center>
     <hr>
-    <!--  下面表单将以post的方法，将数据传递给Text -->
-    <!-- 随机选择题目 -->
     <form name="quiz_form">
         <div class="centered-container">
             <div id="quiz_questions"></div>
@@ -29,9 +29,11 @@
     <button onclick="javascript:main();">交卷</button>
     <a href="about_qualifying.html#wfxq1"><button onclick="javascript:exit();">退出</button></a>
     <h3>
-        五道题中您一共答对了<font color="red"><span id="right_number"></span></font> 题，
-        得分：<span class="score"><span id="score">0</span></span>
-        用了<font color="red"><span id="time"></span></font>秒
+        您一共答对了<font color="red"><span id="right_number"></span></font> 题
+        <br>
+        恭喜您获得：<span class="score"><span id="score">0</span></span>积分
+        <br>
+        用时:<font color="red"><span id="time"></span></font>秒
         <br>
         正确的题目有:<span id="right_question" style="color:red"></span>
         <br>
